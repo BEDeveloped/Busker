@@ -1,8 +1,17 @@
 <div>
     <menu-bar></menu-bar>
     <div class="logo-container">
+        <div class="landing-carosel">
+            <carousel interval="home.interval">
+                <slide ng-repeat="slide in home.slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                    <div class="carousel-caption">
+                    </div>
+                </slide>
+            </carousel>
+        </div>
         <div class="logo">
-            <img class="image" ng-src="img/logo_black.png">
+            <img class="image" ng-src="img/logo_white.png">
             <label class="tag">love. live. music.</label>
         </div>
     </div>

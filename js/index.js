@@ -45,13 +45,12 @@ buskerApp.controller('homeController', function($scope){
         interval:5000,
         slides:[],
         init:function(){
-            var size = 700;
-            for(var i=0;i<4;i++){
+            for(var i=0; i< 5;i++){
+                var n = i+1;
                 this.slides.push({
-                    image:'http://placebear.com/g/'+size+'/500',
-                    text:"Image " + i
+                    image:'img/busker_'+n+'.jpg',
+                    text:'Busker'
                 });
-                size + i;
             }
         }
     };
