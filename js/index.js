@@ -84,3 +84,40 @@ buskerApp.controller('profileController', function(){
 
     return profile;
 });
+
+/*
+ * DIRECTIVES
+ */
+buskerApp.directive('menuBar', ['$log', function($log){
+    return{
+        restrict:"E",
+        replace:true,
+        controllerAs:'menu',
+        controller:function($log){
+            var menu = {
+                locationItems:['New York', 'Chicago', 'Boston', 'Los Angeles'],
+                musicStyles:[],
+                picks:[],
+                options:[],
+                toggled:function(open){
+                    $log.log('Dropdown is now: ', open);
+                }
+            };
+
+            return menu;
+        },
+        templateUrl:'templates/menu.html'
+    }
+}]);
+
+buskerApp.directive('applicationForm', ['$log', function($log){
+    return {
+        restrict:"E",
+        replace:true,
+        templateUrl:'templates/application.html',
+        controllerAs:'application',
+        controller:function($log){
+
+        }
+    }
+}])

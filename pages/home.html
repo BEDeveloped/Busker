@@ -1,13 +1,9 @@
 <div>
-    <h1>{{home.title}}</h1>
-    <div style="height:80%; width:80%;">
-        <carousel interval="home.interval">
-            <slide ng-repeat="slide in home.slides" active="slide.active">
-                <img ng-src="{{slide.image}}" style="margin: auto">
-                <div class="carousel-caption">
-                    <h4>{{slide.text}}</h4>
-                </div>
-            </slide>
-        </carousel>
+    <menu-bar></menu-bar>
+    <div class="logo-container">
+        <div class="logo">
+            <img class="image" ng-src="img/logo_black.png">
+            <label class="tag">love. live. music.</label>
+        </div>
     </div>
 </div>

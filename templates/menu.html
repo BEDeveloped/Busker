@@ -1,0 +1,43 @@
+<div class="menu">
+    <span class="dropdown menu-item" dropdown on-toggle="toggled(open)">
+        <a href class="dropdown-toggle menu-text" dropdown-toggle>
+            locations
+        </a>
+        <ul class="dropdown-menu">
+            <li ng-repeat="choice in menu.locationItems track by $index">
+                <a href>{{choice}}</a>
+            </li>
+        </ul>
+    </span>
+    <span class="dropdown menu-item" dropdown on-toggle="toggled(open)">
+        <a href class="dropdown-toggle menu-text" dropdown-toggle>
+            music styles
+        </a>
+        <ul class="dropdown-menu">
+            <li ng-repeat="choice in menu.musicStyles track by $index">
+                <a href>{{choice}}</a>
+            </li>
+        </ul>
+    </span>
+    <span class="dropdown menu-item" dropdown on-toggle="toggled(open)">
+        <a href class="dropdown-toggle menu-text" dropdown-toggle>
+            our picks
+        </a>
+        <ul class="dropdown-menu">
+            <li ng-repeat="choice in menu.picks track by $index">
+                <a href>{{choice}}</a>
+            </li>
+        </ul>
+    </span>
+    <span class="dropdown menu-item" dropdown on-toggle="toggled(open)">
+        <a href class="dropdown-toggle menu-text" dropdown-toggle>
+            <i class="glyphicon glyphicon-align-justify"></i>
+        </a>
+        <ul class="dropdown-menu">
+            <li ng-repeat="choice in menu.options track by $index">
+                <a href>{{choice}}</a>
+            </li>
+        </ul>
+    </span>
+    <button class="apply-btn">Musicians: Apply</button>
+</div>
