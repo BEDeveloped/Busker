@@ -1,18 +1,40 @@
 <div>
     <menu-bar></menu-bar>
     <div class="logo-container">
-        <div class="landing-carosel">
+        <div class="landing-carousel">
             <carousel interval="home.interval">
                 <slide ng-repeat="slide in home.slides" active="slide.active">
                     <img ng-src="{{slide.image}}" style="margin:auto;">
                     <div class="carousel-caption">
+
                     </div>
                 </slide>
             </carousel>
         </div>
+        <!--
         <div class="logo">
             <img class="image" ng-src="img/logo_white.png">
             <label class="tag">love. live. music.</label>
+        </div>-->
+    </div>
+    <div class="bottom-content">
+        <div class="bar" align="center">
+            <button class="black-btn">Book</button>
+        </div>
+        <div class="bar" align="center">
+            <label class="slug">BOOK A MUSICIAN ONLINE</label>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" ng-repeat="video in home.videos1">
+                    <youtube code="video"></youtube>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" ng-repeat="video in home.videos2">
+                    <youtube code="video"></youtube>
+                </div>
+            </div>
         </div>
     </div>
 </div>

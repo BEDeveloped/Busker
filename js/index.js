@@ -39,11 +39,13 @@ buskerApp.config(function($routeProvider){
  * Home controller
  * This controller holds all functionality for the landing page of Busker.
  */
-buskerApp.controller('homeController', function($scope){
+buskerApp.controller('homeController', function(){
     var home = {
         title:"Busker",
         interval:5000,
         slides:[],
+        videos1:['Iyy3YOpxL2k', '7OyytKqYjkE', 'IIA1XQnAv5s'],
+        videos2:[ 'tcejTS2tUKQ', '8YfZa80E1fA', 'jPJNt1eTVNY'],
         init:function(){
             for(var i=0; i< 5;i++){
                 var n = i+1;
@@ -109,6 +111,22 @@ buskerApp.directive('menuBar', ['$log', function($log){
     }
 }]);
 
+buskerApp.directive('youtube', ['$log', '$sce', function($log, $sce){
+    return{
+        restrict:'EA',
+        scope: {code:'='},
+        replace:true,
+        template: '<div style="height:300px; width:350px;"><iframe style="overflow:hidden;height:100%;width:100%" width="100%" height="100%" src="{{url}}" frameborder="0" allowfullscreen></iframe></div>',
+        link:function(scope){
+            scope.$watch('code', function(newVal){
+                if(newVal){
+                    scope.url = $sce.trustAsResourceUrl("http://www.youtube.com/embed/" + newVal);
+                }
+            })
+        }
+    }
+}]);
+
 buskerApp.directive('applicationForm', ['$log', function($log){
     return {
         restrict:"E",
@@ -119,4 +137,4 @@ buskerApp.directive('applicationForm', ['$log', function($log){
 
         }
     }
-}])
+}]);
