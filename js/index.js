@@ -101,6 +101,9 @@ buskerApp.directive('menuBar', ['$log', function($log){
                 picks:[],
                 options:[],
                 toggled:function(open){
+                    angular.animate({
+
+                    })
                     $log.log('Dropdown is now: ', open);
                 }
             };
@@ -122,7 +125,7 @@ buskerApp.directive('youtube', ['$log', '$sce', function($log, $sce){
                 if(newVal){
                     scope.url = $sce.trustAsResourceUrl("http://www.youtube.com/embed/" + newVal);
                 }
-            })
+            });
         }
     }
 }]);
